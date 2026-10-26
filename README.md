@@ -1,3 +1,16 @@
 # Deep Learning — ДЗ-1
 
-Решение лабораторной находится в разделе [Pull requests](https://github.com/IGK-arch/DeepLearning_ITMO_lab1/pulls).
+- `hw1.ipynb` — решения всех пунктов, ответы и графики, включая обе ветки 5.2/5.3 и бонусы 7.1–7.5.
+- `artifacts/metrics.json` — численные результаты основной части и бонусов.
+- Три файла `.pt` — обязательные checkpoint ResNet-20, стандартной FashionMNIST CNN и PGD-AT CNN.
+
+Установка: `python -m pip install -r requirements.txt`. Затем откройте ноутбук в Jupyter
+или VS Code и выберите это окружение. Данные загружаются из ноутбука.
+Фактическое окружение: Python 3.11.9, PyTorch 2.11.0+cu126, RTX 4060 Laptop.
+Для такой CUDA-сборки: `python -m pip install --index-url https://download.pytorch.org/whl/cu126 torch==2.11.0 torchvision==0.26.0`.
+
+Эксперименты выполнены с `FAST_MODE=False`; 19 исходных тестовых ячеек прошли.
+`REUSE_COMPLETED_TRAINING=True` использует сохранённые полные обучения основной части
+с проверкой хешей. Для повторного обучения установите `False`.
+В ноутбуке оставлены один поток CPU, ограничение памяти GPU и паузы между вычислениями.
+После полного прогона упрощён и отдельно проверен только экспорт результатов.
